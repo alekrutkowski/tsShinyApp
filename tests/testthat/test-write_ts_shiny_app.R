@@ -43,7 +43,7 @@ test_that("generated app has the intended interaction defaults", {
 
 test_that("duplicate series-time keys are rejected", {
   dt <- make_test_dt()
-  dt <- data.table::rbindlist(list(dt, dt[1L]))
+  dt <- data.table::rbindlist(list(dt, dt[1L, ]), use.names = TRUE)
 
   expect_error(
     write_ts_shiny_app(dt, out_dir = tempfile("tsShinyApp-")),

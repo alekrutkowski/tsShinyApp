@@ -1,5 +1,7 @@
 # tsShinyApp 0.1.0
 
+* Fixed R CMD check diagnostics for duplicate-key validation and made the duplicate-key regression test use explicit row subsetting.
+
 * Initial GitHub-ready release of `write_ts_shiny_app()`.
 * Generates one Plotly chart per numeric measure and server-side Selectize filters for categorical dimensions.
 * Supports optional left-to-right cascading filters.
