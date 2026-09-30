@@ -8,6 +8,9 @@ write_ts_shiny_app()
 
 The function takes a `data.table`, saves the data as an RDS file, and writes a ready-to-run single-file Shiny application (`app.R`) for interactively exploring one or more time series.
 
+*N.B. The screenshot is based on synthetic data*
+<img width="3271" height="2232" alt="image" src="https://github.com/user-attachments/assets/33f85979-7ef1-4f8b-bca4-13a6ca06e6b2" />
+
 ## What the generated app provides
 
 - Multiple-selection, server-side Selectize filters for every categorical column.
@@ -43,11 +46,9 @@ pak::local_install(".")
 
 ### From GitHub
 
-After the repository has been pushed to GitHub:
-
 ```r
 # install.packages("remotes")
-remotes::install_github("<github-user>/tsShinyApp")
+remotes::install_github("alekrutkowski/tsShinyApp")
 ```
 
 Replace `<github-user>` with the repository owner.
