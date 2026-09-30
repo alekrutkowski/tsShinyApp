@@ -1,0 +1,26 @@
+Dependency acknowledgements
+===========================
+
+This package is MIT-licensed and does not vendor the source code of its R
+dependencies. It relies on, or generates applications that rely on, the
+following independent open-source projects. Their own licenses and copyright
+notices continue to apply.
+
+Runtime dependency of tsShinyApp
+--------------------------------
+* data.table - https://r-datatable.com/ - MPL-2.0
+
+Packages used by generated Shiny applications
+----------------------------------------------
+* Shiny - https://shiny.posit.co/ - MIT
+* bslib - https://rstudio.github.io/bslib/ - MIT
+* plotly for R - https://plotly-r.com/ - MIT
+* htmltools - https://rstudio.github.io/htmltools/ - GPL-2 | GPL-3
+* data.table - https://r-datatable.com/ - MPL-2.0
+
+Development/test dependency
+---------------------------
+* testthat - https://testthat.r-lib.org/ - MIT
+
+These projects are acknowledged for the functionality they provide. No
+endorsement by their authors or maintainers is implied.

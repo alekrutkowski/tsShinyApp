@@ -1,0 +1,25 @@
+Package: tsShinyApp
+Type: Package
+Title: Generate Interactive Shiny Time-Series Explorers
+Version: 0.1.0
+Authors@R: person("Alek", "Rutkowski", email = "alek.rutkowski@gmail.com", role = c("aut", "cre"))
+Description: Generates a self-contained Shiny application and an RDS data file
+    from a data.table containing time-series data. The generated application
+    provides server-side categorical filtering, optional cascading filters,
+    interactive Plotly charts, time-window selection, index rebasing,
+    resizable chart cards, and safeguards for displaying many time series.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends:
+    R (>= 4.0.0)
+Imports:
+    data.table
+Suggests:
+    bslib,
+    htmltools,
+    plotly,
+    shiny,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3

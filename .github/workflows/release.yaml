@@ -1,0 +1,50 @@
+on:
+  push:
+    tags:
+      - 'v*'
+
+name: GitHub release
+
+permissions:
+  contents: write
+
+jobs:
+  build-check-release:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
+
+      - name: Build source package
+        shell: bash
+        run: R CMD build .
+
+      - name: Check source package
+        shell: bash
+        run: |
+          pkg=$(ls -1 tsShinyApp_*.tar.gz | head -n 1)
+          R CMD check --no-manual "$pkg"
+
+      - name: Create or update GitHub release
+        shell: bash
+        run: |
+          tag="${GITHUB_REF_NAME}"
+          pkg=$(ls -1 tsShinyApp_*.tar.gz | head -n 1)
+          if ! gh release view "$tag" >/dev/null 2>&1; then
+            gh release create "$tag" --generate-notes --title "$tag"
+          fi
+          gh release upload "$tag" "$pkg" --clobber
