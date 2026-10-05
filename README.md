@@ -21,7 +21,7 @@ The function takes a `data.table`, saves the data as an RDS file, and writes a r
 - Optional point markers, **off by default**.
 - Independently resizable chart cards: right edge changes width, bottom edge changes height, and the bottom-right corner changes both.
 - Full-screen chart cards.
-- A top-bar working spinner while Shiny or Plotly is busy.
+- A large, centered overlay spinner while Shiny or Plotly is busy.
 - A maximum of 10 displayed series at a time. If broader filters match more than 10 series, the app shows a prominent warning and sends the same random sample of 10 series to every chart.
 - Mouse-wheel/two-finger scrolling over charts scrolls the page instead of zooming the chart. Plotly drag and toolbar zoom remain available.
 - A compact Plotly modebar positioned away from the resizable right edge; the redundant Cartesian hover-mode toggle buttons are removed while comparison hover remains the chart default.

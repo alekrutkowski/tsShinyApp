@@ -37,6 +37,8 @@ test_that("generated app has the intended interaction defaults", {
   expect_match(app, "scrollZoom = FALSE", fixed = TRUE)
   expect_match(app, '"hoverClosestCartesian", "hoverCompareCartesian"', fixed = TRUE)
   expect_match(app, ".metric-card .modebar-container", fixed = TRUE)
+  expect_match(app, ".tsapp-busy { position: fixed; inset: 0; z-index: 2000", fixed = TRUE)
+  expect_match(app, ".tsapp-spinner { width: 56px; height: 56px", fixed = TRUE)
   expect_match(app, "filtered_rows <- reactive", fixed = TRUE)
   expect_match(app, "plot_rows <- reactive", fixed = TRUE)
 })
