@@ -488,7 +488,7 @@ plot_cards <- tagList(lapply(numeric_cols, function(metric) {
         tags$div(
           class = "metric-heading",
           tags$span(metric),
-          tags$span(class = "metric-badge", "Drag shaded card edges or corner")
+          tags$span(class = "metric-badge", "Drag shaded card edges or corner to resize")
         )
       ),
       bslib::card_body(
